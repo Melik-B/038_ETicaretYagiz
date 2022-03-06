@@ -1,0 +1,29 @@
+﻿/*External CSS*/
+
+body {
+    background-color:pink;
+}
+
+.mylabelclass{
+    color:rebeccapurple;
+}
+
+.yagizabiyeulas{
+    color:black;
+    background-color:aquamarine;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+}
+
+.yagizabiyeulas:hover {
+    color: black;
+    background-color: aquamarine;
+    width:200px;
+}
+
+input.myinputclass{
+    /*width:1000px;*/
+    width:95%;
+    border-radius:7px;
+}
