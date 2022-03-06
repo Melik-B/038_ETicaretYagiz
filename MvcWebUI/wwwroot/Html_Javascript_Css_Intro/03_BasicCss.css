@@ -27,3 +27,52 @@ input.myinputclass{
     width:95%;
     border-radius:7px;
 }
+
+#mydivid{
+    background-image:url('./02_Html/WhatsApp Image 2022-03-06 at 16.49.28.jpeg');
+    height:2000px;
+    width:2000px;
+    background-repeat:no-repeat;
+    //background-position:center;
+    border-width:1px;
+    border-style:solid;
+    border-color:gold;
+    padding-top:30px;
+    text-align:right;
+}
+
+.Resim {
+    width: 500px;
+    height: 450px;
+}
+
+.benveyagizabi{
+    margin-left:40px;
+    font-weight:700;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-block:groove;
+    border-block-color:red;
+}
+
+.myaclass {
+    
+}
+
+    .myaclass:hover {
+        color: red;
+        text-decoration: none;
+        font-family: 'Comic Sans MS' !important;
+        font-size: 18px;
+    }
+
+.myaclass:visited{
+    text-decoration:none;
+    font-family:'Comic Sans MS';
+    color:green;
+}
+
+.myaclass:link{
+    text-decoration:none;
+    color:blue;
+    font-size:15px;
+}
