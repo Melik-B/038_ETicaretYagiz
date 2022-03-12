@@ -34,5 +34,10 @@ var terstenGlobal = true;
 function onClickIleDoldur() {
     var mytextarea = document.getElementById("mytextareaid");
     mytextarea.value = ucgenDoldur(terstenGlobal);
+    var body = document.getElementsByTagName("body")[0];
+    if (terstenGlobal)
+        body.style.backgroundColor = "blue";
+    else
+        body.style.backgroundColor = "yellow";
     terstenGlobal = !terstenGlobal;
 }

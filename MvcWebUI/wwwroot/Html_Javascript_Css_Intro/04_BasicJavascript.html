@@ -57,5 +57,77 @@
     <textarea id="mytextareaid" rows="10" cols="50"></textarea>
     <br />
     <button onclick="onClickIleDoldur();">Ucgen Doldur</button>
+
+    <script src="04_Bilgisayar.js"></script>
+    <hr />
+    <table border="1">
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <h2>Bilgisayar</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Marka</b>
+            </td>
+            <td>
+                <input type="text" id="marka" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Model</b>
+            </td>
+            <td>
+                <input type="text" id="model" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>İşlemci Hızı</b>
+            </td>
+            <td>
+                <input type="text" id="hiz" />GHz
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Hafıza</b>
+            </td>
+            <td>
+                <select id="hafiza">
+                    <option value="8">8</option>
+                    <option value="16">16</option>
+                    <option value="32">32</option>
+                </select>GB
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Su Soğutma</b>
+            </td>
+            <td>
+                <input type="checkbox" id="susogutma" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Üretim Tarihi</b>
+            </td>
+            <td>
+                <input type="date" id="uretimtarihi" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center">
+                <button onclick="bilgisayarOlustur();">Bilgisayar Oluştur</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <p id="bilgisayar"></p>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
