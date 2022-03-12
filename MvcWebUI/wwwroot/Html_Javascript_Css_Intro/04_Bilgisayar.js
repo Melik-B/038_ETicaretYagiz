@@ -3,8 +3,8 @@
     var model = document.getElementById("model");
     var hiz = document.getElementById("hiz");
     var hafiza = document.getElementById("hafiza");
-    var susogutma = document.getElementById("susogutma");
-    var uretimtarihi = document.getElementById("uretimtarihi");
+    var suSogutma = document.getElementById("susogutma");
+    var uretimTarihi = document.getElementById("uretimtarihi");
     let bilgisayar = new Bilgisayar(
         marka.value,
         model.value,
@@ -18,22 +18,21 @@
 }
 
 class Bilgisayar {
-    constructor(marka, model, hiz, hafiza, susogutma, uretimtarihi) {
+    constructor(marka, model, hiz, hafiza, suSogutma, uretimTarihi) {
         this.marka = marka;
         this.model = model;
         this.hiz = hiz;
         this.hafiza = hafiza;
-        this.susogutma = susogutma;
-        this.uretimtarihi = uretimtarihi;
+        this.suSogutma = suSogutma;
+        this.uretimTarihi = uretimTarihi;
     }
 
     getir() {
-        var sonuc =
-            '<b><i>Marka:</i></b> ' + this.marka + '<br />' +
+            return '<b><i>Marka:</i></b> ' + this.marka + '<br />' +
             '<b><i>Model:</i></b> ' + this.model + '<br />' +
             '<b><i>İşlemci Hızı:</i></b> ' + this.hiz + ' GHz<br />' +
             '<b><i>Hafıza:</i></b> ' + this.hafiza + ' GB<br />' +
-            '<b><i>Su Soğutma:</i></b> ' + ( this.susogutma ? 'Evet' : 'Hayır' ) + '<br />' +
-            '<b><i>Üretim Tarihi:</i></b> ' + this.uretimtarihi.toLocalString('tr-TR');
+            '<b><i>Su Soğutma:</i></b> ' + ( this.suSogutma ? 'Evet' : 'Hayır' ) + '<br />' +
+            '<b><i>Üretim Tarihi:</i></b> ' + this.uretimTarihi.toLocaleString('tr-TR');
     }
 }

@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>YAĞIZ YILMAZ</title>
+    <script src="../lib/jquery/dist/jquery.min.js"></script>
+    <script>
+        //$(documet).ready(function () {
+        $(function () {
+            //alert("Document loaded.");
+            console.log("Document loaded.");
+            $("button").click(function () {
+                $("p").hide();
+                //$("p").show();
+            });
+
+            $("#showButton").click(function () {
+                //$("p").hide();
+                $("p").show();
+            });
+
+            /***********************/
+
+            $("#myaid").click(function (event) {
+                event.preventDefault();
+                //$("#mylabelid").toggle("slow");
+                //$("#mylabelid").toggle("fast");
+                $("#mylabelid").toggle(1000);
+            });
+            $("#bSave").on("click", function () {
+                var adi = $("#tbAdi").val();
+                var soyadi = $("#tbSoyadi").val();
+                var no = $("#tbNo").val();
+                var saveResult = $("#lSaveResult");
+                //if (adi.trim() == "" || soyadi.trim() == "" || no.trim() == "") {
+                //    saveResult.text("Öğrenci adı, soyadı ve numarası boş olamaz!");
+                //} else {
+                //    saveResult.text("Adı: " + adi.trim() + ", soyadı: " + soyadi.trim() + ", numarası: " + no.trim() + " olan öğrenci kaydedildi");
+                //}
+                var emptyFound = false; // flag
+                $(".ogrenci").each(function () {
+                    if ($(this).val().trim() == "") {
+                        emptyFound = true;
+                    }
+                });
+                if (emptyFound) {
+                    saveResult.text("Öğrenci adı, soyadı ve numarası boş olamaz!");
+                    saveResult.css("color", "red");
+                } else {
+                    saveResult.text("Adı: " + adi.trim() + ", soyadı: " + soyadi.trim() + ", numarası: " + no.trim() + " olan öğrenci kaydedildi");
+                    saveResult.css("color", "green").slideUp(1000).slideDown(1000);
+                }
+            });
+            /*$("ddlSehir").val("");*/
+            $("lDdlSehir").html("<b>Şehir seçiniz.</b>");
+            $('#ddlSehir').change(function () {
+                if ($("#ddlSehir").val() == "") {
+                    $("#lDdlSehir").hrml("<b>Şehir seçiniz</b>");
+                } else {
+                    $("#lDdlSehir").html("Seçili değer: " + $("#ddlSehir").val());
+                }
+            });
+            $("#cbMutlu").prop("checked", true);
+            $("#sMutlu").text(":)");
+            $("#cbMutlu").change(function () {
+                if ($("#cbMutlu").prop("checked") == true) {
+                    $("#sMutlu").text(":)");
+                }
+                else {
+                    $("#sMutlu").text(":(");
+                }
+            });
+            $("#rTr").prop("checked", true)
+            $("#rAbd").prop("checked", false)
+            $("#rKanada").prop("checked", false)
+            $("#rAdana").prop("checked", false)
+            $("input[name=ulkeler]").off("click");
+            $("input[name=ulkeler]").on("click", function () {
+                $("#ulke").text($("input[name=ulkeler]:checked").val());
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>jQuery</p>
+    <button>Hide jQuery</button>
+    <button id="showButton">Show jQuery</button>
+    <hr />
+    <label id="mylabelid">Yağız canavar bütün konları çalışmış</label>
+    <br />
+    <a id="myaid" href="">Yukarıdaki yazıyı göster / gizle</a>
+    <table style="border-style:solid; border-width:1px;">
+        <tr>
+            <td>
+                Öğrenci Adı
+            </td>
+            <td>
+                <input type="text" id="tbAdi" class="ogrenci" width="250" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Öğrenci Soyadı
+            </td>
+            <td>
+                <input type="text" id="tbSoyadi" class="ogrenci" width="250" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Öğrenci No
+            </td>
+            <td>
+                <input type="text" id="tbNo" class="ogrenci" width="250" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" id="bSave" class="ogrenci" value="Kaydet" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <label id="lSaveResult"></label>
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <select id="ddlSehir">
+        <option value="">-- Seçinizi --</option>
+        <option value="01">Adana</option>
+        <option value="6">Ankara</option>
+        <option value="34">İstanbul</option>
+        <option value="35">İzmir</option>
+    </select>
+    <br />
+    <label id="lDdlSehir"></label>
+    <hr />
+    <input type="checkbox" id="cbMutlu" />&nbsp;Mutlu musun?
+    <br />
+    <span id="sMutlu"></span>
+    <hr />
+    <input type="radio" name="ulkeler" value="tr" id="rTr" /> Türkiye
+    <input type="radio" name="ulkeler" value="abd" id="rAbd"/> Amerika
+    <input type="radio" name="ulkeler" value="kanada" id="rKanada"/> Kanada
+    <input type="radio" name="ulkeler" value="Adana" id="rAdana"/> Adana
+    <br />
+    <span id="ulke"></span>
+</body>
+</html>
