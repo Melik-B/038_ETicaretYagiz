@@ -78,7 +78,24 @@
             $("input[name=ulkeler]").on("click", function () {
                 $("#ulke").text($("input[name=ulkeler]:checked").val());
             });
+            $("#bSehirler").click(function () {
+                var sehirler = sehirleriGetir();
+                $('#sSehirler').text(sehirler);
+            });
         });
+        function sehirleriGetir() {
+            var sehirler = "";
+            var seciliSehirler = $("#lbSehirler").val();
+            if (seciliSehirler.length > 0) {
+                var i = 0;
+                while (i < seciliSehirler.length) {
+                    sehirler += seciliSehirler[i] + ", ";
+                    i++;
+                }
+                sehirler = sehirler.substr(0, sehirler.length - 2); // 06, 01,
+            }
+            return sehirler;
+        }
     </script>
 </head>
 <body>
@@ -141,10 +158,33 @@
     <span id="sMutlu"></span>
     <hr />
     <input type="radio" name="ulkeler" value="tr" id="rTr" /> Türkiye
-    <input type="radio" name="ulkeler" value="abd" id="rAbd"/> Amerika
-    <input type="radio" name="ulkeler" value="kanada" id="rKanada"/> Kanada
-    <input type="radio" name="ulkeler" value="Adana" id="rAdana"/> Adana
+    <input type="radio" name="ulkeler" value="abd" id="rAbd" /> Amerika
+    <input type="radio" name="ulkeler" value="kanada" id="rKanada" /> Kanada
+    <input type="radio" name="ulkeler" value="Adana" id="rAdana" /> Adana
     <br />
     <span id="ulke"></span>
+    <hr />
+    <select multiple id="lbSehirler">
+        <option value="01">Adana</option>
+        <option value="06">Ankara</option>
+        <option value="34">İstanbul</option>
+    </select>
+    <br />
+    <input type="button" id="bSehirler" value="Seçili Şehirleri Getir" />
+    <br />
+    <span id="sSehirler"></span>
+    <hr />
+    <script src="05_BasicJquery.js"></script>
+    <input type="text" id="tbInput1" placeholder="Enter a text to set below..." />
+    <br />
+    <input type="button" id="bSetText" value="Set Text" />&nbsp;
+    <input type="button" id="bSetHtml" value="Set HTML" />&nbsp;
+    <input type="button" id="bSetValue" value="Set Value" />
+    <br />
+    <span id="sOutput1"></span>
+    <br />
+    <span id="sOutput2"></span>
+    <br />
+    <input type="text" id="tbOutput1" />
 </body>
 </html>
